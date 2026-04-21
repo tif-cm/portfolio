@@ -28,19 +28,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto text-end">
                 <!-- Menu Links -->
                 <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link contact-btn" href="#contact">Contact</a></li>
+                <li class="nav-item d-lg-none"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
+        <a class="nav-link contact-btn" href="mailto:tif@hawaii.edu">Contact</a>
     </nav>
 </header>
     <!-- Start Hero Section -->
      <section class="hero" id="hero">
-        <h1>Tiffany Mueller</h1>
-        <p class="subtitle">Content Strategist</p>
+        <div class="hero-title-group">
+    <h1>Tiffany Mueller</h1>
+    <p class="subtitle">Content Strategist</p>
+</div>
         <img src="images/large-bouqet-hero.png" alt="Floral motif" class="hero-flowers">
      </section>
      <!-- End Hero Section -->
@@ -93,34 +96,71 @@
     </section>
      <!-- End Testimonials Section -->
      <!-- Start About Section -->
-     <section class="about" id="about">
-        <h2>About</h2>
-        <div class="about-flowers">
+     <!-- About Section -->
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="row align-items-start section-split">
+            <div class="col-lg-4 col-md-12 section-title-col">
+                <h2>About</h2>
+            </div>
+
+            <div class="col-lg-8 col-md-12 section-content-col">
+                <p>
+                    Data informs, empathy guides: As a content strategist, I've applied these principles
+                    to everything from content design projects for large-scale student portals to viral
+                    content marketing strategies for social media brands.
+                </p>
+
+                <p>
+                    I love the big-picture work of building brand voices and content frameworks but I'm
+                    equally at home writing, designing, testing, and iterating.
+                </p>
+            </div>
         </div>
-        <p>Data informs, empathy guides: As a content strategist, I've applied these principles to everything from content design projects for large-scale student portals to viral content marketing strategies for social media brands.</p>
-        <p>I love the big-picture work of building brand voices and content frameworks but I'm equally at home writing, designing, testing, and iterating.</p>
-    </section>
-     <!-- End About Section -->
-     <!-- Start Contact Section -->
-     <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <p class="contact-name"><strong>Tiffany Mueller</strong> | Content Strategist</p>
-        <p>Open to project based roles</p>
-        <p class="contact-phone"><a href="tel:+18083150873">(808) 315-0XXX</a></p>
-        <p class="contact-email"><a href="mailto:tif@hawaii.edu">tif@hawaii.edu</a></p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tiffany-mueller/" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                </svg>
-            </a>
-            <a href="mailto:tif@hawaii.edu" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-                </svg>
-            </a>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="row align-items-start section-split">
+            <div class="col-lg-4 col-md-12 section-title-col">
+                <h2>Contact</h2>
+            </div>
+
+            <div class="col-lg-8 col-md-12 section-content-col">
+                <p class="contact-name">
+                    <strong>Tiffany Mueller</strong> | Content Strategist
+                </p>
+
+                <p>Open to project based roles</p>
+
+                <p class="contact-phone">
+                    <a href="tel:18083150000">(808) 315-0XXX</a>
+                </p>
+
+                <p class="contact-email">
+                    <a href="mailto:tif@hawaii.edu">tif@hawaii.edu</a>
+                </p>
+
+                <div class="social-icons">
+    <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.79-2.18 4.05 0 4.8 2.67 4.8 6.13V24h-4v-7.8c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24h-4V8z"></path>
+        </svg>
+    </a>
+
+    <a href="mailto:tif@hawaii.edu" class="social-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M1.5 4.5h21a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 0 18V6a1.5 1.5 0 0 1 1.5-1.5zm0 2.1v.2l10.5 7 10.5-7v-.2h-21zm21 2l-9.67 6.45a1.5 1.5 0 0 1-1.66 0L1.5 8.6V18h21V8.6z"></path>
+        </svg>
+    </a>
+</div>
+            </div>
         </div>
-     </section>
+    </div>
+</section>
      <!-- End Contact Section -->
      <!-- Start Footer-->
      <section class="footer">
