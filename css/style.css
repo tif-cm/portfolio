@@ -25,7 +25,7 @@ html {
 body {
     font-family: var(--font-lato);
     background-color: var(--navy);
-    color: var(--dark-text);
+    color: var(--light-text);
     overflow-x: hidden;
 }
 
@@ -43,6 +43,7 @@ h2 {
     font-weight: 400;
     line-height: 1;
     letter-spacing: -1.92px;
+    margin-bottom: 40px;
 }
 
 h3 {
@@ -52,7 +53,10 @@ h3 {
     line-height: 1;
 }
 
-/* ===== Header and Navigation ===== */
+.container h2:not(:first-child) {
+    margin-top: 80px;
+}
+
 .navbar-header {
     background-color: var(--navy);
     padding: 20px 0;
@@ -111,18 +115,12 @@ h3 {
 
 /* ===== Hero Section ===== */
 .hero {
-    background: linear-gradient(
-        to bottom,
-        var(--navy) 0%,
-        var(--navy) 72%,
-        var(--powder-blush) 72%,
-        var(--powder-blush) 100%
-    );
-    padding: 100px 40px 80px;
-    min-height: 600px;
+    background-color: var(--navy);
+    padding: 100px 40px 380px; 
+    position: relative; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -149,36 +147,36 @@ h3 {
     text-align: right;
     color: rgba(224, 239, 218, 0.9);
     margin-top: -36px;
-    margin-bottom: 100px;
+    margin-bottom: 0; 
     margin-right: 0;
     align-self: unset;
 }
 
 .hero-flowers {
-    max-width: 30%;
+    width: 30%;
+    min-width: 300px; 
     height: auto;
-    margin-top: 20px;
-    position: relative;
+    
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); 
     z-index: 5;
-    transform: translateY(-50px);
 }
 
-/* ===== Case Studies Section ===== */
+/* ===== Case Studies Section Homepage===== */
 .projects {
     background-color: var(--powder-blush);
-    padding: 0px 40px 220px;
+    border-radius: 50% 50% 0 0 / 15rem 15rem 0 0;
+    padding: 260px 40px 220px;; 
     position: relative;
 }
 
 .projects h2 {
-    font-family: var(--font-viaoda);
-    font-size: 96px;
     text-align: center;
     color: var(--dark-text);
-    font-weight: 400;
-    margin-top: -80px;
+    margin-top: 0; 
     margin-bottom: 60px;
-    letter-spacing: -1.92px;
 }
 
 .case-studies-container {
@@ -242,7 +240,7 @@ h3 {
     z-index: 5;
 }
 
-/* ===== Testimonials Section ===== */
+/* ===== Testimonials Section Homepage===== */
 .testimonials {
     background: linear-gradient(
         to bottom,
@@ -285,7 +283,7 @@ h3 {
     margin-top: 40px;
 }
 
-/* ===== Shared Split Sections ===== */
+/* ===== Column styling ===== */
 .section-split {
     align-items: flex-start;
 }
@@ -305,19 +303,20 @@ h3 {
     margin: 0;
 }
 
-.about .col-lg-3,
-.contact .col-lg-4 {
+.about .section-title-col,
+.contact .section-title-col {
     display: flex;
     align-items: flex-start;
 }
 
-.about .col-lg-9,
-.contact .col-lg-9 {
+.about .section-content-col,
+.contact .section-content-col {
     padding-left: 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 .section-title-col h2 {
     white-space: nowrap;
 }
@@ -325,16 +324,19 @@ h3 {
 .section-content-col {
     padding-left: 15px;
 }
+
 /* ===== About Section ===== */
 .about {
     background-color: var(--powder-blush);
-    padding: 60px 50px;
+    padding: 60px 50px 180px;
     text-align: left;
     overflow: hidden;
+    border-radius: 0 0 50% 50% / 0 0 15rem 15rem;
 }
 
 .about h2 {
     color: var(--dark-text);
+    margin-bottom: 0;
 }
 
 .about p {
@@ -346,7 +348,7 @@ h3 {
     margin-bottom: 0;
 }
 
-/* ===== Contact Section ===== */
+/* ===== Contact Section (All pages)===== */
 .contact {
     background-color: var(--navy);
     padding: 100px 40px;
@@ -355,6 +357,7 @@ h3 {
 
 .contact h2 {
     color: var(--light-text);
+    margin-bottom: 0;
 }
 
 .contact-name {
@@ -420,9 +423,18 @@ h3 {
     fill: currentColor;
 }
 
-/* ===== Case Study Page ===== */
+/* ===== Case Study Detail Pages ===== */
+.case-study-flowers {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: -50px auto 0;
+    transform: translateY(50%);
+    position: relative;
+    z-index: 5;
+}
 
-/* ===== Footer ===== */
+/* ===== Footer (All Pages)===== */
 .footer {
     background-color: var(--powder-blush);
     padding: 40px;
@@ -455,19 +467,13 @@ h3 {
     }
 
     .contact-btn {
-    display: none;
-  }
+        display: none;
+    }
 
     .hero {
-        padding: 90px 30px 70px;
-        min-height: 520px;
-        background: linear-gradient(
-            to bottom,
-            var(--navy) 0%,
-            var(--navy) 68%,
-            var(--powder-blush) 68%,
-            var(--powder-blush) 100%
-        );
+        padding: 90px 30px 220px;
+        min-height: auto;
+        background-color: var(--navy);
     }
 
     .hero-title-group {
@@ -486,22 +492,21 @@ h3 {
         font-size: 20px;
         text-align: center;
         margin-top: 20px;
-        margin-bottom: 70px;
+        margin-bottom: 0;
         margin-right: 0;
     }
 
     .hero-flowers {
-        max-width: 42%;
-        transform: translateY(-30px);
+        width: 45%;
     }
 
     .projects {
-        padding: 0px 30px 140px;
+        padding: 160px 30px 140px; 
     }
 
     .projects h2 {
         font-size: 72px;
-        margin-top: -50px;
+        margin-top: 0;
         margin-bottom: 40px;
         letter-spacing: -1.2px;
     }
@@ -551,7 +556,10 @@ h3 {
         margin-top: 30px;
     }
 
-    .about,
+    .about {
+        padding: 80px 30px 140px;
+    }
+    
     .contact {
         padding: 80px 30px;
     }
@@ -569,6 +577,11 @@ h3 {
         font-size: 18px;
         line-height: 24px;
     }
+    
+    .case-study-flowers {
+        width: min(60vw, 400px);
+        margin: -30px auto 0;
+    }
 
     .social-icons {
         gap: 28px;
@@ -585,23 +598,11 @@ h3 {
         line-height: 24px;
     }
 }
-@media (max-width: 1024px) {
-    .contact-btn {
-        display: none !important;
-    }
-}
 
-@media (max-width: 480px) {
+/* ===== Mobile Design ===== */
+@media (max-width: 768px) {
     .hero {
-        padding: 60px 20px 40px;
-        min-height: 680px;
-        background: linear-gradient(
-            to bottom,
-            var(--navy) 0%,
-            var(--navy) 65%,
-            var(--powder-blush) 65%,
-            var(--powder-blush) 100%
-        );
+        padding: 60px 20px 200px;
     }
 
     .hero-title-group {
@@ -620,22 +621,21 @@ h3 {
         font-size: 16px;
         text-align: center;
         margin-top: -10px;
+        margin-bottom: 0;
         margin-right: 0;
     }
 
     .hero-flowers {
         width: min(82vw, 340px);
-        max-width: none;
-        margin-top: 0;
     }
 
     .projects,
     .contact {
-        padding: 60px 20px;
+        padding: 140px 20px 60px; 
     }
 
     .about {
-        padding: 60px 20px;
+        padding: 60px 20px 120px;
     }
 
     .projects h2,
@@ -643,6 +643,7 @@ h3 {
     .contact h2 {
         font-size: 36px;
         letter-spacing: -0.72px;
+        margin-top: 0;
         margin-bottom: 30px;
     }
 
@@ -684,5 +685,10 @@ h3 {
 
     .contact-btn {
         display: none;
+    }
+    
+    .case-study-flowers {
+        width: min(80vw, 280px);
+        margin: -20px auto 0;
     }
 }

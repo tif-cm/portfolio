@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- REQUIRED: Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- REQUIRED: Page Title -->
     <title>Tiffany Mueller's Portfolio</title>
-    <!-- REQUIRED: Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- REQUIRED: Your Custom CSS-->
     <link rel="stylesheet" href="css/style.css">
-    <!-- REQUIRED: Google Font API -->
-
     <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Start Header Section -->
-<header class="navbar-header">
+    <header class="navbar-header">
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <!-- Logo -->
-        <a class="navbar-brand" href="/index.html"><img src="images/lettermark.png" alt="Tiffany Mueller Logo" class="logo"></a> 
+        <a class="navbar-brand" href="/"><img src="images/lettermark.png" alt="Tiffany Mueller Logo" class="logo"></a> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-end">
-                <!-- Menu Links -->
-                <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
                 <li class="nav-item d-lg-none"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
         <a class="nav-link contact-btn" href="mailto:tif@hawaii.edu">Contact</a>
     </nav>
 </header>
-    <!-- Start Hero Section -->
     <main>
         <section class="py-5" style="color: var(--light-text);">
             <div class="container py-lg-5">
@@ -45,51 +34,36 @@
                     <div class="col-lg-6">
                         <p class="subtitle">Case Study</p>
                         <h1 style="color: var(--powder-blush)">Viral content strategy for social platform</h1>
-                        <p >A content strategy case study focused on growing engagement, increasing subscriber awareness, and giving photographers daily prompts that kept them returning to the platform.</p>
-                        <div class="row g-4">
-                            <div class="col-sm-6">
-                                <p style="color: var(--powder-blush);">Overview</p>
-                                <p>PhotoBlog is a social platform with 100,000+ subscribers that gives photographers a dedicated place to share high-resolution images, find inspiration, and discover other unique voices.</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p style="color: var(--powder-blush);">My role</p>
-                                <p>Content strategist, production, and marketing partner from concept through launch.</p>
-                            </div>
-                        </div>
+                        <p>A content strategy case study focused on growing engagement, increasing subscriber awareness, and giving photographers daily prompts that kept them returning to the platform.</p>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img src="images/case-study-placeholder.png" alt="Decorative bouquet illustration for the case study" class="img-fluid" style="width: 100%; padding: 2rem; border-radius: 1.5rem;">
+                    <div class="col-lg-6">
+                        <img src="images/PB-cover-page.svg" alt="screenshot of calendar cover page" class="img-fluid" style="width: 100%; border-radius: 8rem 8rem 0 0;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-5" style="background-color: var(--powder-blush); color: var(--dark-text); border-radius: 0 0 8rem 8rem;">
-            <div class="container py-4">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <p>My goal was to create an entire strategy that would attract more subscribers, engage users, and raise brand awareness for my client.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <p style="font-weight: 900;">Target user</p>
-                                <p>Photographers looking for motivation and support to complete photo-a-day projects.</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p style="font-weight: 900;">Surfaces</p>
-                                <p>Print, web, and mobile touchpoints.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <img src="images/upper-bouquet.png" alt="Decorative bouquet illustration" style="width: 100%;">
-                </div>
+       <section class="pt-5 pb-0" style="background-color: var(--powder-blush); color: var(--dark-text); border-radius: 0 0 15rem 15rem;">
+    <div class="container pt-4 pb-0">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <p>PhotoBlog is a social platform with 100,000+ subscribers that gives photographers a dedicated place to share high-resolution images, find inspiration, and discover other unique voices.</p>
+                <p class="mb-0">My goal was to create an entire strategy that would attract more subscribers, engage users, and raise brand awareness for my client.</p>
             </div>
-        </section>
+            <div class="col-lg-6">
+                <p style="font-weight: 900;">Target user</p>
+                <p>Photographers looking for motivation and support to complete photo-a-day projects.</p>
+                <p style="font-weight: 900;">Surfaces</p>
+                <p>Print, web, and mobile touchpoints.</p>
+                <p style="font-weight: 900;">My role</p>
+                <p class="mb-0">Content strategist, production, and marketing partner from concept through launch.</p>
+            </div>
+        </div>
+        <img src="images/wide-bouqet.png" alt="Floral motif" class="case-study-flowers">
+    </div>
+</section>
 
-        <section class="py-5" style="background-color: var(--navy); color: var(--light-text);">
+        <section class="pb-5" style="padding-top: 100px; background-color: var(--navy); color: var(--light-text);">
             <div class="container py-lg-5">
                 <h2>Problem statement</h2>
                 <div class="row g-5 align-items-start">
@@ -102,10 +76,10 @@
                 </div>
                 <div class="row g-4 mt-4">
                     <div class="col-md-6 text-center">
-                        <img src="images/upper-bouquet.png" alt="Case study supporting image" class="img-fluid" style="width: 100%;">
+                        <img src="images/PB-strategy-card-thumb.svg" alt="screenshot of strategy card" class="img-fluid" style="width: 100%;">
                     </div>
                     <div class="col-md-6 text-center">
-                        <img src="images/upper-bouquet.png" alt="Case study supporting image" class="img-fluid" style="width: 100%;">
+                        <img src="images/PB-print-cal.svg" alt="screenshot of print calendar" class="img-fluid" style="width: 100%;">
                     </div>
                 </div>
             </div>
@@ -132,6 +106,14 @@
                         <p>To boost user engagement and drive organic campaign growth, my content strategy involved introducing a custom hashtag, `#photoblog365`. We encouraged users to share this hashtag along with their project images on our platform and across their social media accounts.</p>
                     </div>
                 </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 text-center">
+                        <img src="images/PB-blog-post-full.svg" alt="screenshot of blog post" class="img-fluid" style="width: 100%;">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="images/PB-hashtag.svg" alt="screenshot of hashtag usage" class="img-fluid" style="width: 100%;">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -152,14 +134,8 @@
                         <p>PhotoBlog's social media following grew 25% month-over-month after launch.</p>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <img src="images/upper-bouquet.png" alt="Decorative bouquet illustration for results" class="img-fluid" style="max-width: 48rem; width: 100%; background: linear-gradient(90deg, #ebdfd0 0 35%, #93a09d 35% 65%, #ebdfd0 65% 100%); padding: 2rem; border-radius: 0 0 8rem 8rem;">
-                    </div>
-                </div>
             </div>
         </section>
-<!-- Contact Section -->
 <section class="contact" id="contact">
     <div class="container">
         <div class="row align-items-start section-split">
@@ -182,7 +158,7 @@
                 </p>
 
                 <div class="social-icons">
-    <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" >
+    <a href="https://www.linkedin.com/in/itsmetiffany/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" >
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.79-2.18 4.05 0 4.8 2.67 4.8 6.13V24h-4v-7.8c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24h-4V8z"></path>
         </svg>
@@ -198,8 +174,7 @@
         </div>
     </div>
 </section>
-     <!-- End Contact Section -->
-    </main>
+     </main>
 
     <footer class="footer">
         <p>© 2026 Tiffany Mueller</p>
