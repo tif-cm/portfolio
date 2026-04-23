@@ -1,2 +1,2 @@
 # portfolio
-[view portfolio]([https://tif-cm.github.io/portfolio/])
+[view portfolio](https://tif-cm.github.io/portfolio/)
