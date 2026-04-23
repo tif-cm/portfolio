@@ -657,10 +657,13 @@ p a:hover, li a:hover {
         width: min(82vw, 340px);
     }
 
-    .projects,
-    .contact {
-        padding: 140px 20px 60px; 
-    }
+    .projects {
+    padding: 260px 20px 60px; /* Increased top padding to push the H2 down past the flowers */
+}
+
+.contact {
+    padding: 180px 20px 60px; /* Keeps the contact section looking normal */
+}
 
     .about {
         padding: 60px 20px 120px;
