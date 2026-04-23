@@ -37,13 +37,25 @@ p {
     margin-bottom: 20px;
 }
 
+li {
+    font-family: var(--font-lato);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+li::marker {
+    color: var(--powder-blush);
+}
+
 h2 {
     font-family: var(--font-viaoda);
     font-size: 96px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -1.92px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 h3 {
@@ -51,6 +63,21 @@ h3 {
     font-size: 42px;
     font-weight: 500;
     line-height: 1;
+    margin-bottom: 16px;
+}
+
+/* Styles the hyperlinks */
+p a, li a {
+    color: var(--powder-blush);
+    text-decoration: none;
+    border-bottom: 1px solid transparent; 
+    transition: all 0.3s ease;
+}
+
+p a:hover, li a:hover {
+    color: var(--powder-blush);
+    border-bottom: 1px solid var(--powder-blush);
+    opacity: 0.8;
 }
 
 .container h2:not(:first-child) {
