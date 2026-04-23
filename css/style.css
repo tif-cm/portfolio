@@ -529,7 +529,7 @@ p a:hover, li a:hover {
     }
 
     .projects {
-        padding: 160px 30px 140px; 
+        padding: 200px 30px 140px; 
     }
 
     .projects h2 {
@@ -585,7 +585,7 @@ p a:hover, li a:hover {
     }
 
     .about {
-        padding: 80px 30px 140px;
+        padding: 0px 30px 140px;
     }
     
     .contact {
@@ -633,6 +633,11 @@ p a:hover, li a:hover {
         padding: 60px 20px 200px;
     }
 
+    .testimonial-flowers {
+        margin-bottom: -30px;
+        position: relative;
+    }
+
     .hero-title-group {
         display: block;
         width: 100%;
@@ -658,15 +663,15 @@ p a:hover, li a:hover {
     }
 
     .projects {
-    padding: 260px 20px 60px; /* Increased top padding to push the H2 down past the flowers */
+    padding: 200px 20px 60px;
 }
 
-.contact {
-    padding: 180px 20px 60px; /* Keeps the contact section looking normal */
-}
+    .contact {
+        padding: 32px 20px 60px;
+    }
 
     .about {
-        padding: 60px 20px 120px;
+        padding: 0px 20px 120px;
     }
 
     .projects h2,
@@ -674,8 +679,8 @@ p a:hover, li a:hover {
     .contact h2 {
         font-size: 36px;
         letter-spacing: -0.72px;
-        margin-top: 0;
         margin-bottom: 30px;
+
     }
 
     .about p,
@@ -721,5 +726,6 @@ p a:hover, li a:hover {
     .case-study-flowers {
         width: min(80vw, 280px);
         margin: -20px auto 0;
+
     }
 }
