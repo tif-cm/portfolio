@@ -196,7 +196,7 @@ p a:hover, li a:hover {
     background-color: var(--powder-blush);
     border-radius: 50% 50% 0 0 / 15rem 15rem 0 0;
     padding: 260px 40px 220px;; 
-    position: relative;
+    position: relative; /* I needed to add this in order to position child elements (mainly the flowers) absolutely */
 }
 
 .projects h2 {
@@ -480,6 +480,7 @@ p a:hover, li a:hover {
 }
 
 /* ===== Tablet Design ===== */
+/* Added max-width due to background curve and accent flowers scaling issues */
 @media (min-width: 769px) and (max-width: 1024px) {
     .navbar-custom {
         padding: 0 24px;
