@@ -101,13 +101,139 @@
         </div>
      </section>
      <!-- End Projects Section -->
-     <!-- Start Testimonials Section -->
-     <section class="testimonials">
-            <img src="images/mamane-palila.png" alt="Floral motif" class="projects-flowers"><br><br><br><br>
-            <blockquote>"Tiffany was a game-changer for our platforms. She came in, identified exactly where our content was falling short, and kept refining things until we saw a massive improvement in performance."</blockquote>
-            <p class="testimonial-author">-W. Mitchell, Senior Product Manager</p>
-            <img src="images/mamane-palila.png" alt="Floral motif" class="testimonial-flowers">
-    </section>
+  <!-- Start Pop-Out Design Gallery Section -->
+<style>
+    /* Injected directly to bypass CSS caching issues */
+    .pop-card {
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+        z-index: 1;
+    }
+    .pop-image-wrap {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .pop-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .pop-info {
+        position: absolute;
+        bottom: 10px; 
+        /* The bulletproof centering trick */
+        left: 0; 
+        right: 0; 
+        margin: 0 auto; 
+        
+        width: 90%;
+        background-color: var(--honeydew, #F0EAD6);
+        padding: 20px 15px;
+        border-radius: 8px;
+        text-align: center; /* Ensures the text inside stays centered */
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        opacity: 0; 
+        transition: all 0.4s ease;
+        pointer-events: none;
+    }
+    .pop-info h4 {
+        font-family: var(--font-lato);
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--navy, #1B3644);
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .pop-info p {
+        font-family: var(--font-lato);
+        font-size: 12px;
+        color: var(--powder-blush, #5C6B5D);
+        margin: 0;
+    }
+    /* Hover Triggers */
+    .pop-card:hover {
+        z-index: 10;
+        transform: translateY(-15px); 
+    }
+    .pop-card:hover .pop-info {
+        opacity: 1; 
+        bottom: -30px; 
+        /* No transform needed here anymore! */
+    }
+</style>
+
+<section class="testimonials" id="designs" style="padding: 120px 20px 200px; overflow: visible; position: relative;">
+    
+    <!-- Pinned exactly to the top center edge of the section -->
+    <img src="images/mamane-palila.png" alt="Floral motif" class="projects-flowers" style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); margin-top: 0; z-index: 5;">
+    
+<div class="container" style="max-width: 1200px; position: relative; z-index: 10; margin-top: 80px;">
+        <div class="row gx-4 gy-5 justify-content-center">
+            
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="pop-card">
+                    <div class="pop-image-wrap">
+                        <img src="images/mahiai-Screen-Mockups.png" alt="Design 1">
+                    </div>
+                    <div class="pop-info">
+                        <h4>Web design</h4>
+                        <p>View Project Details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="pop-card">
+                    <div class="pop-image-wrap">
+                        <img src="images/PB-print-cal.svg" alt="Design 2">
+                    </div>
+                    <div class="pop-info">
+                        <h4>Web Layout</h4>
+                        <p>View Project Details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="pop-card">
+                    <div class="pop-image-wrap">
+                        <img src="https://placehold.co/600x800/1B3644/F0EAD6?text=Design+3" alt="Design 3">
+                    </div>
+                    <div class="pop-info">
+                        <h4>Typography</h4>
+                        <p>View Project Details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="pop-card">
+                    <div class="pop-image-wrap">
+                        <img src="https://placehold.co/600x800/283E4A/F0EAD6?text=Design+4" alt="Design 4">
+                    </div>
+                    <div class="pop-info">
+                        <h4>UI Components</h4>
+                        <p>View Project Details</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <img src="images/mamane-palila.png" alt="Floral motif" class="testimonial-flowers" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 50%); margin-top: 0; z-index: 5;">
+</section>
+<!-- End Pop-Out Design Gallery Section -->
      <!-- End Testimonials Section -->
      <!-- Start About Section -->
      <!-- About Section -->
@@ -121,14 +247,13 @@
 
             <div class="col-lg-8 col-md-12 section-content-col">
                 <p>
-                   I’m a very curious person with a lust for traveling, culture, cooking, the great outdoors, and art of all kinds. I have a deep appreciation for serial commas.</p>
+                I’m a curious storyteller with a deep appreciation for travel, culture, and spending time in nature.</p>
 
-<p>Previously, I worked as a professional horse trainer and equestrian, where I managed my own business developing equine and human athletes for international-level competitions. Working in this industry provided me with exemplary self-motivation and organizational skills.</p>
+<p>My professional background is anything but traditional. I previously ran my own business as a professional horse trainer, developing equine and human athletes for international-level competition. That demanding industry instilled the intense self-motivation and organizational discipline I rely on today.</p>
 
-<p>After deciding to pursue my love of the arts in 2009, I took a strong interest in documentary photography and journalism. I dove head first into a columnist position at Axis Magazine, a print publication with a monthly circulation of over 25,000. Here, I honed essential storytelling, photography, and editorial skills, providing a solid foundation for my creative career.</p>
+<p>In 2009, I pivoted to follow my love for the arts, diving headfirst into documentary photography and journalism as a columnist for Axis Magazine. There, I honed the editorial and visual skills that form the foundation of my work today.</p>
 
-I’ve spent the last 13 years working on a range of projects from layout design, photography, graphic design, and writing. I love developing media and content strategies just as much as I enjoy rolling up my sleeves and creating.
-                </p>
+<p>Now, I translate that passion for narrative across the broader creative media landscape, merging storytelling with thoughtful design to build engaging, accessible experiences in both digital and physical spaces.
             </div>
         </div>
     </div>
@@ -144,10 +269,10 @@ I’ve spent the last 13 years working on a range of projects from layout design
 
             <div class="col-lg-8 col-md-12 section-content-col">
                 <p class="contact-name">
-                    <strong>Tiffany Mueller</strong> | Content Strategist
+                    <strong>Tiffany Mueller</strong> | Creative Media Specialist
                 </p>
 
-                <p>Open to project based roles</p>
+                <p>Based in Honolulu, Hawaiʻi</p>
 
                 <p class="contact-email">
                     <a href="mailto:tif@hawaii.edu">tif@hawaii.edu</a>

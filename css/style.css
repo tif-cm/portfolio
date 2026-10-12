@@ -132,12 +132,12 @@ p a:hover, li a:hover {
 }
 
 .navbar-toggler {
-    color: var(--light-text) !important;
-    border-color: var(--light-text) !important;
+    color: var(--honeydew) !important;
+    border-color: var(--honeydew) !important;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23E0EFDA' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231B3644' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* ===== Hero Section ===== */
@@ -271,16 +271,11 @@ p a:hover, li a:hover {
 
 /* ===== Testimonials Section Homepage===== */
 .testimonials {
-    background: linear-gradient(
-        to bottom,
-        var(--navy) 82%,
-        var(--navy) 18%,
-        var(--honeydew) 15%,
-        var(--honeydew) 81%
-    );
+    background: var(--navy); /* This applies your solid cream color */
     padding: 10px 80px;
     text-align: center;
     position: relative;
+    z-index: 10;
 }
 
 .testimonials blockquote {
@@ -358,10 +353,12 @@ p a:hover, li a:hover {
 /* ===== About Section ===== */
 .about {
     background-color: var(--honeydew);
-    padding: 60px 50px 180px;
+    padding: 180px 50px 180px;
     text-align: left;
     overflow: hidden;
     border-radius: 0 0 40% 40% / 0 0 15rem 15rem;
+    /* Add z-index to ensure the curve sits on top */
+    z-index: 5; 
 }
 
 .about h2 {
@@ -381,8 +378,41 @@ p a:hover, li a:hover {
 /* ===== Contact Section (All pages)===== */
 .contact {
     background-color: var(--navy);
-    padding: 100px 40px;
+    /* Increase top padding to push the text down safely */
+    padding: 250px 40px 100px; 
+    /* Pull the entire section up behind the About curve */
+    margin-top: -200px; 
+    /* Force it to layer underneath the About section */
+    z-index: 1; 
     text-align: left;
+}
+
+/* Creates the transparent repeating background layer */
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/waves-bg.png'); /* Update with your actual file name */
+    background-repeat: repeat;
+    background-size: 600px 600px;
+    opacity: 0.15; /* Adjust transparency here: 0.0 is invisible, 1.0 is solid */
+    z-index: 0;
+    pointer-events: none; /* Prevents the invisible box from blocking link clicks */
+}
+
+/* Pulls the text and icons forward so they sit on top of the pattern */
+.contact .container {
+    position: relative;
+    z-index: 10; 
+}
+
+/* Pulls the text and icons forward so they sit on top of the pattern */
+.contact .container {
+    position: relative;
+    z-index: 10; 
 }
 
 .contact h2 {
@@ -638,9 +668,10 @@ p a:hover, li a:hover {
         padding: 60px 20px 200px;
     }
 
+    .projects-flowers,
     .testimonial-flowers {
-        margin-bottom: -30px;
-        position: relative;
+        width: min(70vw, 250px) !important; /* Prevents them from shrinking too much */
+        margin: 0 !important; /* Clears any lingering mobile margins */
     }
 
     .hero-title-group {
@@ -668,15 +699,27 @@ p a:hover, li a:hover {
     }
 
     .projects {
-    padding: 200px 20px 60px;
+    padding: 200px 20px 160px;
 }
 
-    .contact {
-        padding: 32px 20px 60px;
+   .contact {
+        /* Increased top padding by 150px to account for the tuck */
+        padding: 182px 20px 60px; 
+        margin-top: -150px;
     }
 
     .about {
-        padding: 0px 20px 120px;
+        padding: 120px 20px 120px;
+    }
+
+    /* Scales down the hardcoded HTML gaps for mobile */
+    #designs {
+        padding-top: 60px !important;
+        padding-bottom: 120px !important;
+    }
+    
+    #designs .container {
+        margin-top: 40px !important;
     }
 
     .projects h2,
@@ -733,4 +776,5 @@ p a:hover, li a:hover {
         margin: -20px auto 0;
 
     }
+
 }
