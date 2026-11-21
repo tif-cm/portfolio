@@ -70,7 +70,7 @@ h3 {
 p a, li a {
     color: var(--powder-blush);
     text-decoration: none;
-    border-bottom: 1px solid transparent; 
+    border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
@@ -84,6 +84,7 @@ p a:hover, li a:hover {
     margin-top: 80px;
 }
 
+/* ===== Navbar ===== */
 .navbar-header {
     background-color: var(--navy);
     padding: 20px 0;
@@ -143,172 +144,470 @@ p a:hover, li a:hover {
 /* ===== Hero Section ===== */
 .hero {
     background-color: var(--navy);
-    padding: 100px 40px 380px; 
-    position: relative; 
+    padding: 10px 4.5% 90px;
+    min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-.hero-title-group {
-    display: inline-block;
-    text-align: left;
+.hero-top {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: end; /* Keeps the bio flush with the bottom of the motif grid */
+    gap: 32px;
+}
+
+.hero-bio {
+    font-family: var(--font-lato);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--honeydew);
+    max-width: 390px;
+    margin: 0;
+}
+
+/* 4x3 Interactive Quilt Motif Grid */
+.quilt-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    width: 100%;
+    max-width: min(44vw, 520px);
+    justify-self: end;
+}
+
+.quilt-tile {
+    aspect-ratio: 1 / 1;
+    background-color: var(--dark-text);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color 0.35s ease, transform 0.7s cubic-bezier(0.34, 1.4, 0.64, 1);
+    cursor: pointer;
+}
+
+/* Individual SVG Motifs (located in images/hero-grid/) */
+.motif-protea       { -webkit-mask-image: url('../images/hero-grid/protea-g.svg');       mask-image: url('../images/hero-grid/protea-g.svg'); }
+.motif-hoya         { -webkit-mask-image: url('../images/hero-grid/hoya-g.svg');         mask-image: url('../images/hero-grid/hoya-g.svg'); }
+.motif-hee          { -webkit-mask-image: url('../images/hero-grid/he-e-g.svg');         mask-image: url('../images/hero-grid/he-e-g.svg'); }
+.motif-fern         { -webkit-mask-image: url('../images/hero-grid/fern-g.svg');         mask-image: url('../images/hero-grid/fern-g.svg'); }
+.motif-apapane      { -webkit-mask-image: url('../images/hero-grid/apapane-g.svg');      mask-image: url('../images/hero-grid/apapane-g.svg'); }
+.motif-puakinikini  { -webkit-mask-image: url('../images/hero-grid/puakinikini-g.svg');  mask-image: url('../images/hero-grid/puakinikini-g.svg'); }
+.motif-torch-ginger { -webkit-mask-image: url('../images/hero-grid/torch-ginger-g.svg'); mask-image: url('../images/hero-grid/torch-ginger-g.svg'); }
+.motif-monstera     { -webkit-mask-image: url('../images/hero-grid/monstera-g.svg');     mask-image: url('../images/hero-grid/monstera-g.svg'); }
+.motif-ulu          { -webkit-mask-image: url('../images/hero-grid/ulu-g.svg');          mask-image: url('../images/hero-grid/ulu-g.svg'); }
+.motif-ti           { -webkit-mask-image: url('../images/hero-grid/ti-g.svg');           mask-image: url('../images/hero-grid/ti-g.svg'); }
+.motif-hibiscus     { -webkit-mask-image: url('../images/hero-grid/hibiscus-g.svg');     mask-image: url('../images/hero-grid/hibiscus-g.svg'); }
+.motif-heliconia    { -webkit-mask-image: url('../images/hero-grid/heliconia-g.svg');    mask-image: url('../images/hero-grid/heliconia-g.svg'); }
+
+/* Hover Color Shifts (using existing site palette) */
+.quilt-tile.hover-primary:hover {
+    background-color: var(--honeydew);
+}
+
+.quilt-tile.hover-secondary:hover {
+    background-color: var(--powder-blush);
+}
+
+/* Hover Spin Cycles */
+.quilt-tile.spin:hover {
+    transform: rotate(90deg) scale(1.04);
+}
+
+.quilt-tile.spin-alt:hover {
+    transform: rotate(-180deg) scale(1.04);
+}
+
+.hero-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero h1 {
     font-family: var(--font-viaoda);
-    font-size: 170px;
-    text-align: left;
+    font-size: clamp(64px, 15.7vw, 320px);
+    text-align: center;
     color: var(--honeydew);
     font-weight: 400;
-    line-height: 1;
-    margin-bottom: 10px;
-    letter-spacing: -5.1px;
-}
-
-.hero .subtitle {
-    font-family: var(--font-lato);
-    font-size: 24px;
-    font-style: italic;
-    text-align: right;
-    color: var(--dark-text)
-    margin-top: -36px;
-    margin-bottom: 0; 
-    margin-right: 0;
-    align-self: unset;
-}
-
-.hero-flowers {
-    width: 40%;
-    min-width: 300px; 
-    height: auto;
-    
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%); 
-    z-index: 5;
-}
-
-/* ===== Case Studies Section Homepage===== */
-.projects {
-    background-color: var(--honeydew);
-    border-radius: 40% 40% 0 0 / 15rem 15rem 0 0;
-    padding: 260px 40px 220px;; 
-    position: relative; /* I needed to add this in order to position child elements (mainly the flowers) absolutely */
-}
-
-.projects h2 {
-    text-align: center;
-    color: var(--navy);
-    margin-top: 0; 
-    margin-bottom: 60px;
-}
-
-.case-studies-container {
-    display: flex;
-    margin-top: 80px;
-    gap: 30px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.case-card {
-    background: transparent;
-    position: relative;
-    border-radius: 250px 250px 0 0;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-}
-
-.case-card:hover {
-    transform: translateY(-10px);
-}
-
-.card-image-wrapper {
+    line-height: 0.88;
+    letter-spacing: 0.005em; /* Removes the -0.025em squeeze */
+    white-space: nowrap;
+    margin: 0;
     width: 100%;
-    aspect-ratio: 1;
-    background-color: var(--light-gray);
-    border-radius: 250px 250px 0 0;
-    overflow: hidden;
 }
 
-.card-image {
+.hero-scroll-link {
+    align-self: flex-end;
+    margin-top: -15px; /* Tucks it up into the pocket under "Mueller" */
+    margin-right: -10px;
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-lato);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--honeydew);
+    text-decoration: none;
+    animation: scrollPulse 2.8s ease-in-out infinite;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hero-scroll-link:hover {
+    animation: none;
+    opacity: 1;
+    transform: translateY(3px);
+}
+
+@keyframes scrollPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.35;
+    }
+}
+
+.hero-scroll-link:hover {
+    opacity: 0.7;
+    transform: translateY(3px);
+}
+
+/* ===== ʻIʻiwi Bird Animation (Saved for Reuse) ===== */
+.iiwi-bird-rig {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 54%;
+    right: -6.85%;
+    pointer-events: none;
+    opacity: 0;
+    transform-origin: 55% 88%;
+    animation: iiwiFlightPath 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+.iiwi-state {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.iiwi-flying {
+    opacity: 1;
+    animation: wingFlapAndHide 1.5s ease-in-out 0.35s forwards;
+}
+
+.iiwi-perched {
+    opacity: 0;
+    animation: perchedReveal 1.5s steps(1, end) 0.35s forwards;
+}
+
+@keyframes iiwiFlightPath {
+    0% {
+        opacity: 1;
+        transform: translate3d(55vw, -200px, 0) rotate(-14deg);
+    }
+    72% {
+        transform: translate3d(12px, -14px, 0) rotate(14deg);
+    }
+    86% {
+        transform: translate3d(0, 3px, 0) rotate(6deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) rotate(8deg);
+    }
+}
+
+@keyframes wingFlapAndHide {
+    0%, 25%, 50% { transform: scaleY(1); opacity: 1; }
+    12%, 37%, 62% { transform: scaleY(0.8); opacity: 1; }
+    74% { transform: scaleY(1.05); opacity: 1; }
+    75%, 100% { opacity: 0; }
+}
+
+@keyframes perchedReveal {
+    0%, 74% { opacity: 0; }
+    75%, 100% { opacity: 1; }
+}
+
+.iiwi-bird-rig.is-flying-away {
+    opacity: 1;
+    animation: iiwiFlyAway 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.iiwi-bird-rig.is-flying-away .iiwi-perched {
+    opacity: 0;
+    animation: none;
+}
+
+.iiwi-bird-rig.is-flying-away .iiwi-flying {
+    opacity: 1;
+    animation: wingFlapAway 0.3s ease-in-out infinite;
+}
+
+@keyframes iiwiFlyAway {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) rotate(8deg);
+    }
+    18% {
+        transform: translate3d(-18px, -22px, 0) rotate(-6deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(-90vw, -220px, 0) rotate(-14deg);
+    }
+}
+
+@keyframes wingFlapAway {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.75); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quilt-tile {
+        transition: background-color 0.2s ease;
+
+    }
+    .hero-scroll-link {
+        animation: none;
+    }
+    .quilt-tile.spin:hover,
+    .quilt-tile.spin-alt:hover {
+        transform: none;
+    }
+    .iiwi-bird-rig,
+    .iiwi-bird-rig.is-flying-away {
+        opacity: 1;
+        animation: none;
+        transform: rotate(8deg);
+    }
+    .iiwi-flying,
+    .iiwi-bird-rig.is-flying-away .iiwi-flying {
+        display: none;
+    }
+    .iiwi-perched,
+    .iiwi-bird-rig.is-flying-away .iiwi-perched {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* ===== Case Studies Section Homepage ===== */
+.projects {
+    background-color: var(--navy);
+    padding: 0;
+    position: relative;
+}
+
+.case-studies-grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.case-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+/* Pulls each subsequent row up so alternating images overlap vertically */
+.case-row + .case-row {
+    margin-top: -80px;
+}
+
+/* Alternating layout: puts image on the left, copy on the right */
+.case-row--reverse .case-media {
+    order: -1;
+}
+
+.case-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 10%;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.case-copy-inner {
+    max-width: 440px;
+    width: 100%;
+}
+
+.case-eyebrow {
+    display: block;
+    font-family: var(--font-lato);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dark-text);
+    margin-bottom: 12px;
+}
+
+.case-title {
+    font-family: var(--font-lora);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--honeydew);
+    margin-bottom: 16px;
+}
+
+.case-desc {
+    font-family: var(--font-lato);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--honeydew);
+    margin-bottom: 28px;
+}
+
+.case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-lato);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--honeydew);
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.case-link-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--honeydew);
+    border-radius: 50%;
+    font-size: 14px;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.case-link:hover .case-link-circle {
+    background-color: var(--honeydew);
+    color: var(--navy);
+    transform: translateX(4px);
+}
+
+/* Tall vertical image block that extends higher/lower than the copy */
+.case-media {
+    display: block;
+    width: 100%;
+    min-height: 620px;
+    overflow: hidden;
+    background-color: var(--light-gray);
+    position: relative;
+    z-index: 2;
+}
+
+.case-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.card-body {
+.case-media:hover img {
+    transform: scale(1.03);
+}
+
+/* ===== Pop-Out Design Gallery Section ===== */
+.designs {
     background-color: var(--navy);
-    padding: 40px 20px;
-}
-
-.card-title {
-    line-height: 1;
-    color: var(--honeydew);
-    margin-bottom: 16px;
-    letter-spacing: 0;
-}
-
-.card-text {
-    color: var(--honeydew);
-}
-
-.projects-flowers {
-    width: 30%;
-    max-width: 100%;
-    height: auto;
-    margin-top: -130px;
+    padding: 80px 40px;
     position: relative;
-    z-index: 5;
+    overflow: visible;
 }
 
-/* ===== Testimonials Section Homepage===== */
-.testimonials {
-    background: var(--navy); /* This applies your solid cream color */
-    padding: 10px 80px;
+.designs .container {
+    max-width: 1200px;
+}
+
+.pop-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.pop-image-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pop-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pop-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 90%;
+    background-color: var(--honeydew, #1B3644);
+    padding: 20px 15px;
+    border-radius: 8px;
     text-align: center;
-    position: relative;
-    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
 }
 
-.testimonials blockquote {
-    font-family: var(--font-lora);
-    font-size: 32px;
-    font-weight: 500;
-    font-style: italic;
-    line-height: 1;
-    color: var(--honeydew);
-    margin-bottom: 30px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: 0;
-}
-
-.testimonial-author {
+.pop-info h4 {
     font-family: var(--font-lato);
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 28px;
-    color: var(--honeydew);
-    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--navy, #F0EAD6);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.testimonial-flowers {
-    width: 30%;
-    max-width: 100%;
-    height: auto;
-    margin-top: 40px;
+.pop-info p {
+    font-family: var(--font-lato);
+    font-size: 12px;
+    color: var(--powder-blush, #5C6B5D);
+    margin: 0;
 }
 
-/* ===== Column styling ===== */
+.pop-card:hover {
+    z-index: 10;
+    transform: translateY(-15px);
+}
+
+.pop-card:hover .pop-info {
+    opacity: 1;
+    bottom: -30px;
+}
+
+/* ===== Column Styling ===== */
 .section-split {
     align-items: flex-start;
 }
@@ -346,19 +645,14 @@ p a:hover, li a:hover {
     white-space: nowrap;
 }
 
-.section-content-col {
-    padding-left: 15px;
-}
-
 /* ===== About Section ===== */
 .about {
     background-color: var(--honeydew);
-    padding: 180px 50px 180px;
+    padding: 100px 50px 180px;
     text-align: left;
     overflow: hidden;
     border-radius: 0 0 40% 40% / 0 0 15rem 15rem;
-    /* Add z-index to ensure the curve sits on top */
-    z-index: 5; 
+    z-index: 5;
 }
 
 .about h2 {
@@ -375,19 +669,15 @@ p a:hover, li a:hover {
     margin-bottom: 0;
 }
 
-/* ===== Contact Section (All pages)===== */
+/* ===== Contact Section (All Pages) ===== */
 .contact {
     background-color: var(--navy);
-    /* Increase top padding to push the text down safely */
-    padding: 250px 40px 100px; 
-    /* Pull the entire section up behind the About curve */
-    margin-top: -200px; 
-    /* Force it to layer underneath the About section */
-    z-index: 1; 
+    padding: 250px 40px 100px;
+    margin-top: -200px;
+    z-index: 1;
     text-align: left;
 }
 
-/* Creates the transparent repeating background layer */
 .contact::before {
     content: "";
     position: absolute;
@@ -395,24 +685,17 @@ p a:hover, li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/waves-bg.png'); /* Update with your actual file name */
+    background-image: url('../images/waves-bg.png');
     background-repeat: repeat;
     background-size: 600px 600px;
-    opacity: 0.15; /* Adjust transparency here: 0.0 is invisible, 1.0 is solid */
+    opacity: 0.15;
     z-index: 0;
-    pointer-events: none; /* Prevents the invisible box from blocking link clicks */
+    pointer-events: none;
 }
 
-/* Pulls the text and icons forward so they sit on top of the pattern */
 .contact .container {
     position: relative;
-    z-index: 10; 
-}
-
-/* Pulls the text and icons forward so they sit on top of the pattern */
-.contact .container {
-    position: relative;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .contact h2 {
@@ -484,11 +767,21 @@ p a:hover, li a:hover {
 }
 
 /* ===== Case Study Detail Pages ===== */
+
+section:not(.about):has(+ .contact) {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 2rem !important;
+}
+
+section:not(.about):has(+ .contact) h2 {
+    color: var(--navy) !important;
+}
+
 .case-study-flowers {
     width: 30%;
     max-width: 100%;
     height: auto;
-    margin-top: 40px;
     display: block;
     margin: -50px auto 0;
     transform: translateY(50%);
@@ -496,7 +789,7 @@ p a:hover, li a:hover {
     z-index: 5;
 }
 
-/* ===== Footer (All Pages)===== */
+/* ===== Footer (All Pages) ===== */
 .footer {
     background-color: var(--honeydew);
     padding: 40px;
@@ -513,8 +806,8 @@ p a:hover, li a:hover {
     margin: 0;
 }
 
+
 /* ===== Tablet Design ===== */
-/* Added max-width due to background curve and accent flowers scaling issues */
 @media (min-width: 769px) and (max-width: 1024px) {
     .navbar-custom {
         padding: 0 24px;
@@ -534,97 +827,56 @@ p a:hover, li a:hover {
     }
 
     .hero {
-        padding: 90px 30px 220px;
+        padding: 30px 30px 50px;
         min-height: auto;
-        background-color: var(--navy);
     }
 
-    .hero-title-group {
-        display: block;
-        width: 100%;
-        text-align: center;
+    .hero-top {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 24px;
     }
 
-    .hero h1 {
-        font-size: 120px;
-        letter-spacing: -3px;
-        text-align: center;
+    .hero-bio {
+        font-size: 16px;
     }
 
-    .hero .subtitle {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 0;
-        margin-right: 0;
+    .quilt-grid {
+        gap: 12px;
     }
 
-    .hero-flowers {
-        width: 45%;
+    .iiwi-bird-rig {
+        width: 115px;
+        height: 115px;
+        bottom: 58%;
+        right: -4%;
     }
 
-    .projects {
-        padding: 200px 30px 140px; 
+    .case-row + .case-row {
+        margin-top: -60px;
     }
 
-    .projects h2 {
-        font-size: 72px;
-        margin-top: 0;
-        margin-bottom: 40px;
-        letter-spacing: -1.2px;
+    .case-media {
+        min-height: 480px;
     }
 
-    .case-studies-container {
-        gap: 20px;
-        margin-top: 50px;
-        justify-content: center;
+    .case-copy {
+        padding: 90px 8%;
     }
 
-    .case-card {
-        min-width: 240px;
-        max-width: 300px;
+    .case-title {
+        font-size: 28px;
     }
 
-    .card-body {
-        padding: 28px 18px;
-    }
-
-    .card-title {
-        font-size: 30px;
-    }
-
-    .card-text {
-        font-size: 18px;
-        line-height: 24px;
-    }
-
-    .projects-flowers {
-        margin-top: -90px;
-    }
-
-    .testimonials {
-        padding: 40px 40px;
-    }
-
-    .testimonials blockquote {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .testimonial-author {
-        font-size: 18px;
-    }
-
-    .testimonial-flowers {
-        margin-top: 30px;
+    .designs {
+        padding: 60px 30px;
     }
 
     .about {
-        padding: 0px 30px 140px;
+        padding: 80px 30px 140px;
     }
-    
+
     .contact {
-        padding: 80px 30px;
+        padding: 220px 30px 80px;
     }
 
     .about h2,
@@ -640,7 +892,7 @@ p a:hover, li a:hover {
         font-size: 18px;
         line-height: 24px;
     }
-    
+
     .case-study-flowers {
         width: min(60vw, 400px);
         margin: -30px auto 0;
@@ -665,70 +917,90 @@ p a:hover, li a:hover {
 /* ===== Mobile Design ===== */
 @media (max-width: 768px) {
     .hero {
-        padding: 60px 20px 200px;
+        padding: 24px 20px 40px;
+        min-height: auto;
+        gap: 32px;
     }
 
-    .projects-flowers,
-    .testimonial-flowers {
-        width: min(70vw, 250px) !important; /* Prevents them from shrinking too much */
-        margin: 0 !important; /* Clears any lingering mobile margins */
+    .hero-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
-    .hero-title-group {
-        display: block;
-        width: 100%;
-        text-align: center;
+    .quilt-grid {
+        order: -1;
+        max-width: 100%;
+        gap: 12px;
+    }
+
+    .hero-bio {
+        font-size: 16px;
+        max-width: 100%;
     }
 
     .hero h1 {
-        font-size: 48px;
-        letter-spacing: -1.44px;
-        text-align: center;
+        font-size: clamp(44px, 13vw, 72px);
+        text-align: left;
     }
 
-    .hero .subtitle {
+    .iiwi-bird-rig {
+        width: 58px;
+        height: 58px;
+        bottom: 62%;
+        right: -5%;
+    }
+
+    .case-row {
+        grid-template-columns: 1fr;
+    }
+
+    .case-row + .case-row {
+        margin-top: 0;
+    }
+
+    /* Always show image above copy on mobile */
+    .case-media,
+    .case-row--reverse .case-media {
+        order: -1;
+        min-height: 360px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .case-copy {
+        padding: 40px 20px 60px;
+    }
+
+    .case-title {
+        font-size: 26px;
+    }
+
+    .case-desc {
         font-size: 16px;
-        text-align: center;
-        margin-top: -10px;
-        margin-bottom: 0;
-        margin-right: 0;
     }
 
-    .hero-flowers {
-        width: min(82vw, 340px);
-    }
-
-    .projects {
-    padding: 200px 20px 160px;
-}
-
-   .contact {
-        /* Increased top padding by 150px to account for the tuck */
-        padding: 182px 20px 60px; 
-        margin-top: -150px;
+    .designs {
+        padding: 50px 20px;
     }
 
     .about {
-        padding: 120px 20px 120px;
+        padding: 70px 20px 120px;
     }
 
-    /* Scales down the hardcoded HTML gaps for mobile */
-    #designs {
-        padding-top: 60px !important;
-        padding-bottom: 120px !important;
-    }
-    
-    #designs .container {
-        margin-top: 40px !important;
+    .about .section-content-col,
+    .contact .section-content-col {
+        padding-left: 12px;
     }
 
-    .projects h2,
+    .contact {
+        padding: 182px 20px 60px;
+        margin-top: -150px;
+    }
+
     .about h2,
     .contact h2 {
         font-size: 36px;
         letter-spacing: -0.72px;
         margin-bottom: 30px;
-
     }
 
     .about p,
@@ -736,26 +1008,6 @@ p a:hover, li a:hover {
     .contact-name {
         font-size: 16px;
         line-height: 1.5;
-    }
-
-    .case-studies-container {
-        gap: 20px;
-    }
-
-    .card-title {
-        font-size: 20px;
-    }
-
-    .card-text {
-        font-size: 14px;
-    }
-
-    .testimonials {
-        padding: 60px 20px;
-    }
-
-    .testimonials blockquote {
-        font-size: 18px;
     }
 
     .navbar-custom {
@@ -770,11 +1022,9 @@ p a:hover, li a:hover {
     .contact-btn {
         display: none;
     }
-    
+
     .case-study-flowers {
         width: min(80vw, 280px);
         margin: -20px auto 0;
-
     }
-
 }
