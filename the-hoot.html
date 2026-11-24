@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T741DBF6GB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T741DBF6GB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hoot — Editorial Layout &amp; Social Carousel | Tiffany Mueller</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Main Portfolio CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Page-Specific Styles for The Hoot -->
+    <style>
+        /* ===== Project Header ===== */
+        .project-hero {
+            background-color: var(--navy);
+            padding: 40px 4.5% 60px;
+        }
+
+        .project-hero .container {
+            max-width: 1200px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-lato);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--honeydew);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: opacity 0.25s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .project-title {
+            font-family: var(--font-lato);
+            font-size: clamp(34px, 4.2vw, 58px);
+            font-weight: 500;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            color: var(--honeydew);
+            max-width: 820px;
+            margin-bottom: 24px;
+        }
+
+        .project-title .serif-accent {
+            font-family: var(--font-lora);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 36px;
+            padding: 20px 0;
+            margin-bottom: 28px;
+            border-top: 1px solid rgba(27, 54, 68, 0.2);
+            border-bottom: 1px solid rgba(27, 54, 68, 0.2);
+            font-family: var(--font-lato);
+            font-size: 15px;
+            color: var(--honeydew);
+        }
+
+        .project-meta strong {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 12px;
+            display: block;
+            color: var(--powder-blush);
+            margin-bottom: 2px;
+        }
+
+        .project-intro {
+            font-size: 20px;
+            line-height: 1.65;
+            max-width: 780px;
+            color: var(--honeydew);
+            margin-bottom: 0;
+        }
+
+        /* ===== Section 1: Print & Digital Spreads ===== */
+        .spreads-section {
+            background-color: var(--navy);
+            padding: 20px 4.5% 90px;
+        }
+
+        .spreads-section .container {
+            max-width: 1200px;
+        }
+
+        .section-label {
+            font-family: var(--font-viaoda);
+            font-size: clamp(34px, 4.5vw, 56px);
+            color: var(--honeydew);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subcopy {
+            font-size: 18px;
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .spread-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .spread-card {
+            background-color: rgba(92, 107, 93, 0.14);
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .spread-frame {
+            position: relative;
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 0;
+            background: transparent;
+            cursor: zoom-in;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(27, 54, 68, 0.16);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .spread-frame:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(27, 54, 68, 0.22);
+        }
+
+        .spread-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Subtle center gutter crease to evoke an open print spread */
+        .spread-frame::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                to right,
+                transparent 48.2%,
+                rgba(27, 54, 68, 0.08) 49.6%,
+                rgba(27, 54, 68, 0.16) 50%,
+                rgba(27, 54, 68, 0.06) 50.4%,
+                transparent 51.8%
+            );
+        }
+
+        .spread-caption {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+            font-size: 15px;
+            color: var(--honeydew);
+        }
+
+        .spread-caption span {
+            font-weight: 700;
+        }
+
+        .spread-actions {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .spread-actions button,
+        .spread-actions a {
+            background: none;
+            border: none;
+            padding: 0;
+            color: var(--honeydew);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .spread-actions button:hover,
+        .spread-actions a:hover {
+            opacity: 0.75;
+        }
+
+        /* ===== Section 2: Horizontal 5-Slide Instagram Strip ===== */
+        .carousel-section {
+            background-color: var(--powder-blush);
+            color: var(--navy);
+            padding: 90px 4.5% 110px !important;
+            position: relative;
+            z-index: 3;
+        }
+
+        .carousel-section .container {
+            max-width: 1280px;
+        }
+
+        .carousel-section .section-label,
+        .carousel-section .section-subcopy {
+            color: var(--navy);
+        }
+
+        .carousel-strip {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 8px 32px;
+        }
+
+        .carousel-slide {
+            flex: 1 1 0;
+            position: relative;
+            border: none;
+            padding: 0;
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.84;
+            transform: scale(0.97);
+            box-shadow: 0 6px 16px rgba(27, 54, 68, 0.18);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        opacity 0.35s ease,
+                        box-shadow 0.35s ease;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Active slide sits a hint larger with elevated depth */
+        .carousel-slide.is-active,
+        .carousel-slide:focus-visible {
+            opacity: 1;
+            transform: scale(1.07) translateY(-4px);
+            z-index: 3;
+            box-shadow: 0 20px 38px rgba(27, 54, 68, 0.32);
+            outline: 2px solid var(--navy);
+            outline-offset: 3px;
+        }
+
+        .slide-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(27, 54, 68, 0.85);
+            color: var(--navy);
+            font-family: var(--font-lato);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 4px 9px;
+            border-radius: 999px;
+            pointer-events: none;
+        }
+
+        .carousel-hint {
+            font-size: 14px;
+            color: var(--navy);
+            opacity: 0.9;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        /* ===== Lightbox Modal ===== */
+        .modal-content {
+            background-color: var(--navy);
+            border: none;
+            border-radius: 12px;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(27, 54, 68, 0.15);
+        }
+
+        .modal-title {
+            font-family: var(--font-lora);
+            color: var(--honeydew);
+            font-size: 20px;
+        }
+
+        /* ===== Tablet & Mobile Responsive ===== */
+        @media (max-width: 992px) {
+            .carousel-strip {
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 20px 12px 28px;
+                gap: 18px;
+            }
+
+            .carousel-slide {
+                flex: 0 0 72%;
+                scroll-snap-align: center;
+            }
+
+            .carousel-slide.is-active {
+                transform: scale(1.04);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 24px 20px 40px;
+            }
+
+            .project-intro,
+            .section-subcopy {
+                font-size: 17px;
+            }
+
+            .spreads-section {
+                padding: 10px 20px 60px;
+            }
+
+            .spread-card {
+                padding: 16px;
+            }
+
+            .carousel-section {
+                padding: 60px 20px 90px !important;
+            }
+
+            .carousel-slide {
+                flex: 0 0 80%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spread-frame,
+            .carousel-slide {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Header Section -->
+    <header class="navbar-header">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Tiffany Mueller.png" alt="Tiffany Mueller Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-end">
+                    <li class="nav-item"><a class="nav-link" href="index.html#work">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item d-lg-none"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <a class="nav-link contact-btn" href="mailto:TM@TiffanyMueller.com">Contact</a>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Start Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#selected-works" class="back-link">← Back to Portfolio</a>
+
+            <h1 class="project-title">
+                I <span class="serif-accent">designed</span> print spreads and social storytelling for <span class="serif-accent">UH–West Oʻahu's newspaper</span>.
+            </h1>
+
+            <div class="project-meta">
+                <div>
+                    <strong>Publication</strong>
+                    The Hoot (UH–West Oʻahu)
+                </div>
+                <div>
+                    <strong>Role</strong>
+                    Layout Editor &amp; Reporter
+                </div>
+                <div>
+                    <strong>Tools</strong>
+                    Adobe InDesign, Photoshop
+                </div>
+                <div>
+                    <strong>Formats</strong>
+                    Print, Digital Edition &amp; Instagram
+                </div>
+            </div>
+
+            <p class="project-intro">
+                As Layout Editor for <em>The Hoot</em>, I design multi-column spreads, typography hierarchies, and print-ready editions for campus journalism. For my reported feature on UH–West Oʻahu's 2019–2025 Online and Distance Learning Tactical Plan, I interviewed university leadership alongside neighbor-island and non-traditional students, then adapted the data and reporting into a 5-slide Instagram carousel to supplement the print spread.
+            </p>
+        </div>
+    </section>
+    <!-- End Project Hero -->
+
+    <!-- Start Print & Digital Spreads Section -->
+    <section class="spreads-section">
+        <div class="container">
+            <h2 class="section-label">Print &amp; Digital Spreads</h2>
+            <p class="section-subcopy">
+                Multi-page editorial layouts built in Adobe InDesign. Click the spreads to open them in a modal.
+            </p>
+
+            <div class="spread-grid">
+                <!-- Spread 1 -->
+                <div class="spread-card">
+                    <button
+                        type="button"
+                        class="spread-frame"
+                        data-bs-toggle="modal"
+                        data-bs-target="#spreadModal"
+                        data-spread-src="images/distance_ed_1.png"
+                        data-spread-title="The Hoot — Feature Spread 1"
+                        aria-label="Inspect Feature Spread 1 full-size">
+                        <img src="/images/distance_ed_1.png" alt="Two-page newspaper spread from The Hoot">
+                    </button>
+                    <div class="spread-caption">
+                        <span>Distance Learning Feature Spread</span>
+                        <div class="spread-actions">
+                            <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#spreadModal"
+                                data-spread-src="/images/distance_ed_1.png"
+                                data-spread-title="The Hoot — Feature Spread 1">
+                                View Full Spread
+                            </button>
+                            <!-- Optional: link directly to your print PDF -->
+                            <a href="pdfs/distance-ed_14-15.pdf" target="_blank" rel="noopener noreferrer">Open Print PDF</a>
+                        </div>
+                    </div>
+                </div>
+<!-- Spread 2 -->
+                <div class="spread-card">
+                    <button
+                        type="button"
+                        class="spread-frame"
+                        data-bs-toggle="modal"
+                        data-bs-target="#spreadModal"
+                        data-spread-src="/images/distance_ed_2.png"
+                        data-spread-title="The Hoot — Feature Spread 2"
+                        aria-label="Inspect Feature Spread 1 full-size">
+                        <img src="/images/distance_ed_2.png" alt="Two-page newspaper spread from The Hoot">
+                    </button>
+                    <div class="spread-caption">
+                        <span>Distance Learning Feature Spread</span>
+                        <div class="spread-actions">
+                            <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#spreadModal"
+                                data-spread-src="/images/hoot-spread-1.png"
+                                data-spread-title="The Hoot — Feature Spread 1">
+                                View Full Spread
+                            </button>
+                            <!-- Optional: link directly to your print PDF -->
+                            <a href="pdfs/distance-ed_14-15.pdf" target="_blank" rel="noopener noreferrer">Open Print PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+    <!-- End Print & Digital Spreads Section -->
+
+    <!-- Start 5-Slide Instagram Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-label">Social Media Carousel</h2>
+            <p class="section-subcopy">
+                A 5-slide Instagram data story translating UHWO's distance learning enrollment shifts into a scannable, non-promotional visual sequence.
+            </p>
+
+            <div class="carousel-strip" role="region" aria-label="5-slide Instagram carousel">
+                <button type="button" class="carousel-slide is-active" aria-pressed="true">
+                    <span class="slide-badge">1 / 5</span>
+                    <img src="images/distance-ed-slides1.webp" alt="Instagram carousel slide 1: Cover">
+                </button>
+
+                <button type="button" class="carousel-slide" aria-pressed="false">
+                    <span class="slide-badge">2 / 5</span>
+                    <img src="images/distance-ed-slides2.webp" alt="Instagram carousel slide 2: Enrollment shift data">
+                </button>
+
+                <button type="button" class="carousel-slide" aria-pressed="false">
+                    <span class="slide-badge">3 / 5</span>
+                    <img src="images/distance-ed-slides3.webp" alt="Instagram carousel slide 3: Student perspectives">
+                </button>
+
+                <button type="button" class="carousel-slide" aria-pressed="false">
+                    <span class="slide-badge">4 / 5</span>
+                    <img src="images/distance-ed-slides4.webp" alt="Instagram carousel slide 4: Access across islands">
+                </button>
+
+                <button type="button" class="carousel-slide" aria-pressed="false">
+                    <span class="slide-badge">5 / 5</span>
+                    <img src="images/distance-ed-slides5.webp" alt="Instagram carousel slide 5: Read the full story">
+                </button>
+            </div>
+
+            <p class="carousel-hint">Hover or tap any slide to bring it into focus.</p>
+        </div>
+    </section>
+    <!-- End 5-Slide Instagram Carousel Section -->
+
+    <!-- Start Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row align-items-start section-split">
+                <div class="col-lg-4 col-md-12 section-title-col">
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="col-lg-8 col-md-12 section-content-col">
+                    <p class="contact-name">
+                        <strong>Tiffany Mueller</strong> | Creative Media Specialist
+                    </p>
+
+                    <p><i>E hui pū kāua | Let’s connect</i></p>
+
+                    <p>Based in Honolulu, Hawaiʻi</p>
+
+                    <p class="contact-email">
+                        <a href="mailto:TM@TiffanyMueller.com">TM@TiffanyMueller.com</a>
+                    </p>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/itsmetiffany/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.79-2.18 4.05 0 4.8 2.67 4.8 6.13V24h-4v-7.8c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24h-4V8z"></path>
+                            </svg>
+                        </a>
+
+                        <a href="mailto:TM@TiffanyMueller.com" class="social-icon" aria-label="Email">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M1.5 4.5h21a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 0 18V6a1.5 1.5 0 0 1 1.5-1.5zm0 2.1v.2l10.5 7 10.5-7v-.2h-21zm21 2l-9.67 6.45a1.5 1.5 0 0 1-1.66 0L1.5 8.6V18h21V8.6z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Start Footer -->
+    <section class="footer">
+        <p>© 2026 Tiffany Mueller</p>
+    </section>
+    <!-- End Footer -->
+
+    <!-- Full-Size Spread Modal (Bootstrap 5) -->
+    <div class="modal fade" id="spreadModal" tabindex="-1" aria-labelledby="spreadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="spreadModalLabel">Full Spread</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <img id="spreadModalImg" src="" alt="Full-size newspaper spread" class="img-fluid w-100 rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Minimal Interactions: Active Slide Spotlight + Spread Modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Horizontal 5-Slide Strip: hover or click sets the active (larger) card
+        const slides = document.querySelectorAll(".carousel-slide");
+
+        function setActiveSlide(target) {
+          slides.forEach((slide) => {
+            const isTarget = slide === target;
+            slide.classList.toggle("is-active", isTarget);
+            slide.setAttribute("aria-pressed", isTarget);
+          });
+        }
+
+        slides.forEach((slide) => {
+          slide.addEventListener("mouseenter", () => setActiveSlide(slide));
+          slide.addEventListener("click", () => setActiveSlide(slide));
+        });
+
+        // 2. Populate the Bootstrap modal with whichever spread was clicked
+        const spreadModal = document.getElementById("spreadModal");
+        const modalImg = document.getElementById("spreadModalImg");
+        const modalTitle = document.getElementById("spreadModalLabel");
+
+        spreadModal.addEventListener("show.bs.modal", (event) => {
+          const trigger = event.relatedTarget;
+          modalImg.src = trigger.getAttribute("data-spread-src");
+          modalTitle.textContent = trigger.getAttribute("data-spread-title");
+        });
+      });
+    </script>
+</body>
+</html>

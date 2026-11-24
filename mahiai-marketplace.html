@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T741DBF6GB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T741DBF6GB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahiʻai Marketplace — UI/UX &amp; Brand Design | Tiffany Mueller</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Main Portfolio CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Page-Specific Styles for Mahiʻai Marketplace -->
+    <style>
+        /* ===== Project Header ===== */
+        .project-hero {
+            background-color: var(--navy);
+            padding: 40px 4.5% 70px;
+        }
+
+        .project-hero .container {
+            max-width: 1200px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-lato);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--honeydew);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: opacity 0.25s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .project-title {
+            font-family: var(--font-lato);
+            font-size: clamp(34px, 4.2vw, 58px);
+            font-weight: 500;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            color: var(--honeydew);
+            max-width: 840px;
+            margin-bottom: 24px;
+        }
+
+        .project-title .serif-accent {
+            font-family: var(--font-lora);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 36px;
+            padding: 20px 0;
+            margin-bottom: 28px;
+            border-top: 1px solid rgba(27, 54, 68, 0.2);
+            border-bottom: 1px solid rgba(27, 54, 68, 0.2);
+            font-family: var(--font-lato);
+            font-size: 15px;
+            color: var(--honeydew);
+        }
+
+        .project-meta strong {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 12px;
+            display: block;
+            color: var(--powder-blush);
+            margin-bottom: 2px;
+        }
+
+        .project-intro {
+            font-size: 20px;
+            line-height: 1.65;
+            max-width: 780px;
+            color: var(--honeydew);
+            margin-bottom: 0;
+        }
+
+        /* ===== Tabbed Browser Viewer Section ===== */
+        .viewer-section {
+            background-color: var(--powder-blush);
+            color: var(--navy);
+            padding: 80px 4.5% 110px !important;
+            position: relative;
+            z-index: 3;
+        }
+
+        .viewer-section .container {
+            max-width: 1080px;
+        }
+
+        .section-label {
+            font-family: var(--font-viaoda);
+            font-size: clamp(34px, 4.5vw, 56px);
+            color: var(--navy);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subcopy {
+            font-size: 18px;
+            color: var(--navy);
+            max-width: 700px;
+            margin-bottom: 36px;
+        }
+
+        /* Pill Tabs */
+        .screen-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .screen-tab {
+            background-color: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--navy);
+            border-radius: 999px;
+            padding: 10px 20px;
+            font-family: var(--font-lato);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .screen-tab:hover {
+            background-color: rgba(240, 234, 214, 0.16);
+        }
+
+        .screen-tab.is-active {
+            background-color: var(--navy);
+            color: var(--honeydew);
+        }
+
+        .screen-tab:focus-visible {
+            outline: 2px solid var(--navy);
+            outline-offset: 3px;
+        }
+
+        /* Browser Window Frame */
+        .browser-window {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1.5px solid rgba(27, 54, 68, 0.35);
+            box-shadow: 0 22px 48px rgba(27, 54, 68, 0.28);
+            background-color: #FAF6F0;
+        }
+
+        .browser-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background-color: var(--honeydew);
+            color: var(--navy);
+            font-family: var(--font-lato);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .browser-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .browser-dots {
+            display: inline-flex;
+            gap: 6px;
+        }
+
+        .browser-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(240, 234, 214, 0.45);
+        }
+
+        .browser-url {
+            font-weight: 500;
+            color: var(--light-gray);
+            letter-spacing: 0.02em;
+        }
+
+        .browser-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .scroll-hint {
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            color: var(--navy);
+        }
+
+        .expand-btn {
+            background: transparent;
+            border: 1px solid rgba(240, 234, 214, 0.6);
+            border-radius: 6px;
+            color: var(--navy);
+            font-family: var(--font-lato);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .expand-btn:hover {
+            background-color: var(--navy);
+            color: var(--honeydew);
+        }
+
+        /* Scrollable Viewport */
+        .browser-viewport {
+            height: 640px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            background-color: #FAF6F0;
+            scroll-behavior: smooth;
+        }
+
+        .browser-viewport:focus-visible {
+            outline: 3px solid var(--honeydew);
+            outline-offset: -3px;
+        }
+
+        .browser-viewport img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Dynamic Caption Bar */
+        .screen-caption-box {
+            margin-top: 22px;
+            padding: 18px 22px;
+            background-color: rgba(27, 54, 68, 0.25);
+            border-left: 3px solid var(--navy);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .screen-caption-title {
+            font-family: var(--font-lato);
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .screen-caption-text {
+            font-family: var(--font-lato);
+            font-size: 17px;
+            line-height: 1.55;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        /* ===== Lightbox Modal ===== */
+        .modal-content {
+            background-color: var(--navy);
+            border: none;
+            border-radius: 12px;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(27, 54, 68, 0.15);
+        }
+
+        .modal-title {
+            font-family: var(--font-lora);
+            color: var(--honeydew);
+            font-size: 20px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 24px 20px 44px;
+            }
+
+            .project-intro,
+            .section-subcopy {
+                font-size: 17px;
+            }
+
+            .viewer-section {
+                padding: 56px 20px 90px !important;
+            }
+
+            .screen-tabs {
+                gap: 8px;
+            }
+
+            .screen-tab {
+                padding: 8px 14px;
+                font-size: 14px;
+            }
+
+            .browser-viewport {
+                height: 480px;
+            }
+
+            .browser-url {
+                display: none;
+            }
+
+            .screen-caption-text {
+                font-size: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .browser-viewport {
+                scroll-behavior: auto;
+            }
+            .screen-tab,
+            .expand-btn {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Header Section -->
+    <header class="navbar-header">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Tiffany Mueller.png" alt="Tiffany Mueller Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-end">
+                    <li class="nav-item"><a class="nav-link" href="index.html#work">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item d-lg-none"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <a class="nav-link contact-btn" href="mailto:TM@TiffanyMueller.com">Contact</a>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Start Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#selected-works" class="back-link">← Back to Portfolio</a>
+
+            <h1 class="project-title">
+                I <span class="serif-accent">designed</span> a local produce exchange for <span class="serif-accent">Hawaiʻi communities</span>.
+            </h1>
+
+            <div class="project-meta">
+                <div>
+                    <strong>Project</strong>
+                    Mahiʻai Marketplace
+                </div>
+                <div>
+                    <strong>Role</strong>
+                    UI/UX &amp; Brand Designer
+                </div>
+                <div>
+                    <strong>Tools</strong>
+                    Figma
+                </div>
+                <div>
+                    <strong>Deliverables</strong>
+                    Brand Identity, High-Fidelity UI &amp; UX Copy
+                </div>
+            </div>
+
+            <p class="project-intro">
+                Mahiʻai Marketplace is a peer-to-peer produce exchange concept connecting backyard gardeners with neighbors across Hawaiʻi. I created the visual identity, information architecture, and high-fidelity UI screens—focusing on warm, approachable UX copy, clear two-sided onboarding, and frictionless neighborhood pickup flows.
+            </p>
+        </div>
+    </section>
+    <!-- End Project Hero -->
+
+    <!-- Start 5-Tab Scrollable Browser Viewer -->
+    <section class="viewer-section">
+        <div class="container">
+            <h2 class="section-label">Explore the Screens</h2>
+            <p class="section-subcopy">
+                Select a page below, then scroll inside the frame to inspect the full layout, typography hierarchy, and UX microcopy at desktop scale.
+            </p>
+
+            <!-- 5 Page Tabs -->
+            <div class="screen-tabs" role="tablist" aria-label="Mahiʻai Marketplace page screens">
+                <button
+                    type="button"
+                    class="screen-tab is-active"
+                    role="tab"
+                    aria-selected="true"
+                    data-src="images/mahiai-home.png"
+                    data-alt="Mahiʻai Marketplace Homepage (Not Logged In) full design"
+                    data-url="mahiaimarketplace.org"
+                    data-title="Homepage — Guest View"
+                    data-caption="Introduces the peer-to-peer concept (“Neighborhood Harvest”), email capture, and local produce search with clear filtering by neighborhood and crop.">
+                    Homepage
+                </button>
+
+                <button
+                    type="button"
+                    class="screen-tab"
+                    role="tab"
+                    aria-selected="false"
+                    data-src="images/mahiai-logged-in.png"
+                    data-alt="Mahiʻai Marketplace Logged-In Homepage full design"
+                    data-url="mahiaimarketplace.org/dashboard"
+                    data-title="Homepage — Logged-In View"
+                    data-caption="Shifts immediately to a personalized greeting (“Aloha, Lily!”), saved neighborhood preferences, and a quick-action bar for posting fresh harvests.">
+                    Logged-In View
+                </button>
+
+                <button
+                    type="button"
+                    class="screen-tab"
+                    role="tab"
+                    aria-selected="false"
+                    data-src="images/mahiai-about.png"
+                    data-alt="Mahiʻai Marketplace About Us page full design"
+                    data-url="mahiaimarketplace.org/about"
+                    data-title="About Us"
+                    data-caption="Anchors the brand voice around local food access (“Eat local, really local”), community stories, and a clear mission callout.">
+                    About Us
+                </button>
+
+                <button
+                    type="button"
+                    class="screen-tab"
+                    role="tab"
+                    aria-selected="false"
+                    data-src="images/mahiai-how-it-works.png"
+                    data-alt="Mahiʻai Marketplace How It Works page full design"
+                    data-url="mahiaimarketplace.org/how-it-works"
+                    data-title="How It Works"
+                    data-caption="Separates the parallel 3-step onboarding flows For Gardeners and For Foodies, stripping out confusing e-commerce shipping language in favor of simple neighborhood pickup.">
+                    How It Works
+                </button>
+
+                <button
+                    type="button"
+                    class="screen-tab"
+                    role="tab"
+                    aria-selected="false"
+                    data-src="images/mahiai-faqs.png"
+                    data-alt="Mahiʻai Marketplace FAQs and Support page full design"
+                    data-url="mahiaimarketplace.org/support"
+                    data-title="FAQs &amp; Support"
+                    data-caption="Organizes plain-language self-service answers, instant topic search, and a direct community support form for produce exchange questions.">
+                    FAQs &amp; Support
+                </button>
+            </div>
+
+            <!-- Single Browser Frame -->
+            <div class="browser-window" role="tabpanel" aria-live="polite">
+                <div class="browser-bar">
+                    <div class="browser-bar-left">
+                        <span class="browser-dots" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </span>
+                        <span class="browser-url" id="browserUrl">mahiaimarketplace.org</span>
+                    </div>
+                    <div class="browser-bar-right">
+                        <span class="scroll-hint">Scroll to explore ↓</span>
+                        <button
+                            type="button"
+                            class="expand-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#screenModal">
+                            Full Size
+                        </button>
+                    </div>
+                </div>
+
+                <div class="browser-viewport" id="browserViewport" tabindex="0" aria-label="Scrollable screen preview">
+                    <img
+                        id="activeScreenImg"
+                        src="images/mahiai-home.png"
+                        alt="Mahiʻai Marketplace Homepage (Not Logged In) full design">
+                </div>
+            </div>
+
+            <!-- Dynamic Strategy Caption -->
+            <div class="screen-caption-box">
+                <div class="screen-caption-title" id="captionTitle">Homepage — Guest View</div>
+                <p class="screen-caption-text" id="captionText">
+                    Introduces the peer-to-peer concept (“Neighborhood Harvest”), email capture, and local produce search with clear filtering by neighborhood and crop.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- End 5-Tab Scrollable Browser Viewer -->
+
+    <!-- Start Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row align-items-start section-split">
+                <div class="col-lg-4 col-md-12 section-title-col">
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="col-lg-8 col-md-12 section-content-col">
+                    <p class="contact-name">
+                        <strong>Tiffany Mueller</strong> | Creative Media Specialist
+                    </p>
+
+                    <p><i>E hui pū kāua | Let’s connect</i></p>
+
+                    <p>Based in Honolulu, Hawaiʻi</p>
+
+                    <p class="contact-email">
+                        <a href="mailto:TM@TiffanyMueller.com">TM@TiffanyMueller.com</a>
+                    </p>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/itsmetiffany/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V24h-4V8zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.79-2.18 4.05 0 4.8 2.67 4.8 6.13V24h-4v-7.8c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24h-4V8z"></path>
+                            </svg>
+                        </a>
+
+                        <a href="mailto:TM@TiffanyMueller.com" class="social-icon" aria-label="Email">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M1.5 4.5h21a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 0 18V6a1.5 1.5 0 0 1 1.5-1.5zm0 2.1v.2l10.5 7 10.5-7v-.2h-21zm21 2l-9.67 6.45a1.5 1.5 0 0 1-1.66 0L1.5 8.6V18h21V8.6z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Start Footer -->
+    <section class="footer">
+        <p>© 2026 Tiffany Mueller</p>
+    </section>
+    <!-- End Footer -->
+
+    <!-- Full-Size Modal (Bootstrap 5) -->
+    <div class="modal fade" id="screenModal" tabindex="-1" aria-labelledby="screenModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="screenModalLabel">Homepage — Guest View</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <img id="screenModalImg" src="images/mahiai-home.png" alt="Full-size Mahiʻai Marketplace screen" class="img-fluid w-100 rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Tab Switcher & Modal Sync -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".screen-tab");
+        const viewport = document.getElementById("browserViewport");
+        const activeImg = document.getElementById("activeScreenImg");
+        const browserUrl = document.getElementById("browserUrl");
+        const captionTitle = document.getElementById("captionTitle");
+        const captionText = document.getElementById("captionText");
+        const modalImg = document.getElementById("screenModalImg");
+        const modalTitle = document.getElementById("screenModalLabel");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => {
+              const isSelected = t === tab;
+              t.classList.toggle("is-active", isSelected);
+              t.setAttribute("aria-selected", isSelected);
+            });
+
+            const src = tab.getAttribute("data-src");
+            const alt = tab.getAttribute("data-alt");
+            const url = tab.getAttribute("data-url");
+            const title = tab.getAttribute("data-title");
+            const caption = tab.getAttribute("data-caption");
+
+            activeImg.src = src;
+            activeImg.alt = alt;
+            browserUrl.textContent = url;
+            captionTitle.textContent = title;
+            captionText.textContent = caption;
+
+            // Keep modal synced to whichever tab is active
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modalTitle.textContent = title;
+
+            // Reset scroll position to the top of the newly selected page
+            viewport.scrollTop = 0;
+          });
+        });
+      });
+    </script>
+</body>
+</html>

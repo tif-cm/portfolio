@@ -144,12 +144,12 @@ p a:hover, li a:hover {
 /* ===== Hero Section ===== */
 .hero {
     background-color: var(--navy);
-    padding: 10px 4.5% 90px;
+    padding: 10px 4.5% 20px;
     min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 16px;
+    gap: 48px;
 }
 
 .hero-top {
@@ -241,43 +241,6 @@ p a:hover, li a:hover {
     white-space: nowrap;
     margin: 0;
     width: 100%;
-}
-
-.hero-scroll-link {
-    align-self: flex-end;
-    margin-top: -15px; /* Tucks it up into the pocket under "Mueller" */
-    margin-right: -10px;
-    position: relative;
-    z-index: 2;
-    font-family: var(--font-lato);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--honeydew);
-    text-decoration: none;
-    animation: scrollPulse 2.8s ease-in-out infinite;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.hero-scroll-link:hover {
-    animation: none;
-    opacity: 1;
-    transform: translateY(3px);
-}
-
-@keyframes scrollPulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.35;
-    }
-}
-
-.hero-scroll-link:hover {
-    opacity: 0.7;
-    transform: translateY(3px);
 }
 
 /* ===== ʻIʻiwi Bird Animation (Saved for Reuse) ===== */
@@ -377,10 +340,6 @@ p a:hover, li a:hover {
 @media (prefers-reduced-motion: reduce) {
     .quilt-tile {
         transition: background-color 0.2s ease;
-
-    }
-    .hero-scroll-link {
-        animation: none;
     }
     .quilt-tile.spin:hover,
     .quilt-tile.spin-alt:hover {
@@ -444,36 +403,25 @@ p a:hover, li a:hover {
 }
 
 .case-copy-inner {
-    max-width: 440px;
+    max-width: 500px;
     width: 100%;
 }
 
-.case-eyebrow {
-    display: block;
-    font-family: var(--font-lato);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--dark-text);
-    margin-bottom: 12px;
-}
-
 .case-title {
-    font-family: var(--font-lora);
-    font-size: 36px;
+    font-family: var(--font-lato);
+    font-size: clamp(32px, 3.6vw, 52px);
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--honeydew);
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
-.case-desc {
-    font-family: var(--font-lato);
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--honeydew);
-    margin-bottom: 28px;
+.case-title .serif-accent {
+    font-family: var(--font-lora);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .case-link {
@@ -531,14 +479,28 @@ p a:hover, li a:hover {
 
 /* ===== Pop-Out Design Gallery Section ===== */
 .designs {
-    background-color: var(--navy);
-    padding: 80px 40px;
+    background-color: var(--powder-blush);
+    color: var(--navy);
+    padding: 80px 40px 110px;
     position: relative;
     overflow: visible;
 }
 
 .designs .container {
     max-width: 1200px;
+}
+
+.designs h2,
+.designs h3,
+.designs p {
+    color: var(--navy);
+}
+
+.designs-heading {
+    font-family: var(--font-viaoda);
+    font-size: clamp(36px, 6vw, 72px);
+    color: var(--navy);
+    margin-bottom: 48px;
 }
 
 .pop-card {
@@ -590,10 +552,10 @@ p a:hover, li a:hover {
     letter-spacing: 1px;
 }
 
-.pop-info p {
+.designs .pop-info p {
     font-family: var(--font-lato);
     font-size: 12px;
-    color: var(--powder-blush, #5C6B5D);
+    color: var(--light-gray, #D9D9D9);
     margin: 0;
 }
 
@@ -651,7 +613,7 @@ p a:hover, li a:hover {
     padding: 100px 50px 180px;
     text-align: left;
     overflow: hidden;
-    border-radius: 0 0 40% 40% / 0 0 15rem 15rem;
+    border-radius: 0 0 0% 0% / 0 0 0rem 0rem;
     z-index: 5;
 }
 
@@ -771,7 +733,6 @@ p a:hover, li a:hover {
 section:not(.about):has(+ .contact) {
     position: relative;
     z-index: 3;
-    padding-bottom: 2rem !important;
 }
 
 section:not(.about):has(+ .contact) h2 {
@@ -863,12 +824,8 @@ section:not(.about):has(+ .contact) h2 {
         padding: 90px 8%;
     }
 
-    .case-title {
-        font-size: 28px;
-    }
-
     .designs {
-        padding: 60px 30px;
+        padding: 60px 30px 90px;
     }
 
     .about {
@@ -970,16 +927,8 @@ section:not(.about):has(+ .contact) h2 {
         padding: 40px 20px 60px;
     }
 
-    .case-title {
-        font-size: 26px;
-    }
-
-    .case-desc {
-        font-size: 16px;
-    }
-
     .designs {
-        padding: 50px 20px;
+        padding: 50px 20px 80px;
     }
 
     .about {
@@ -1027,4 +976,105 @@ section:not(.about):has(+ .contact) h2 {
         width: min(80vw, 280px);
         margin: -20px auto 0;
     }
+}
+/* ===== Interactive Game Page ===== */
+.game-hero {
+    background-color: var(--navy);
+    padding: 40px 4.5% 100px;
+}
+
+.game-eyebrow {
+    font-family: var(--font-lato);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--powder-blush);
+    margin-bottom: 12px;
+}
+
+.game-title {
+    font-family: var(--font-viaoda);
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 0.95;
+    color: var(--honeydew);
+    margin-bottom: 20px;
+}
+
+.game-lead {
+    font-family: var(--font-lora);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--honeydew);
+    margin-bottom: 32px;
+}
+
+.game-controls-box {
+    border-top: 1px solid rgba(27, 54, 68, 0.2);
+    border-bottom: 1px solid rgba(27, 54, 68, 0.2);
+    padding: 20px 0;
+    margin-bottom: 28px;
+}
+
+.game-controls-box p {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.game-controls-box p:last-child {
+    margin-bottom: 0;
+}
+
+.keycap {
+    display: inline-block;
+    font-family: var(--font-lato);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    background-color: var(--honeydew);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.game-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.game-meta-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--powder-blush);
+    margin-bottom: 4px;
+}
+
+.game-meta-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--honeydew);
+}
+
+#game-container {
+    display: inline-block;
+    border: 3px solid var(--honeydew);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(27, 54, 68, 0.16);
+    background-color: #bbddee;
+    max-width: 100%;
+}
+
+#game-container canvas {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
 }
